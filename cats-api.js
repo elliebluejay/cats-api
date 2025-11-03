@@ -253,7 +253,7 @@ export class CatsApi extends LitElement {
                 <img src="${img.author.avatar}" />
                 <div>
                   ${img.author.name} <br />
-                  ${img.author.channel} (User since ${img.author.userSince})
+                  ${img.author.channel} <br> (User since ${img.author.userSince})
                 </div>
               </div>
             </div>
