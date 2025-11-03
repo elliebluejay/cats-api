@@ -42,13 +42,13 @@ export class CatsApi extends LitElement {
       :host([theme="dark"]) {
         --background: #0f172a;
         --text: #f8fafc;
-        --card-bg: #1e293b;
+        --card-bg: #27539a;
       }
 
       :host([theme="light"]) {
         --background: #f8fafc;
         --text: #0f172a;
-        --card-bg: #ffffff;
+        --card-bg: #5b9ee1;
       }
 
       .grid {
@@ -253,7 +253,7 @@ export class CatsApi extends LitElement {
                 <img src="${img.author.avatar}" />
                 <div>
                   ${img.author.name} <br />
-                  ${img.author.channel} (Since ${img.author.userSince})
+                  ${img.author.channel} (User since ${img.author.userSince})
                 </div>
               </div>
             </div>

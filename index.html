@@ -6,15 +6,32 @@
     <meta name="Description" content="Cats API Gallery powered by CATAAS" />
     <title>Cats API Gallery</title>
     <style>
+      :root {
+        --background-color: #0f172a;       /* page background */
+        --card-background: #6d85b5;        /* card background */
+        --text-primary: #f8fafc;           /* text color */
+        --secondary-color: #ec4899;        /* button colors */
+      }
+
+      /* Reset and basic layout */
       body {
         margin: 0;
-        background: #0f172a;
-        color: #f8fafc;
         font-family: Arial, sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-primary);
       }
 
       main {
-        padding: 2rem;
+        padding: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h1 {
+        margin-bottom: 1rem;
         text-align: center;
       }
 
@@ -26,10 +43,26 @@
       a:hover {
         text-decoration: underline;
       }
+
+      /* Ensure cats-api takes full width and fills viewport */
+      cats-api {
+        display: block;
+        width: 100%;
+        min-height: 80vh;
+      }
+
+      /* Footer text */
+      footer {
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #94a3b8;
+      }
     </style>
   </head>
   <body>
     <main>
+      <h1>Cats Gallery</h1>
       <cats-api></cats-api>
       <p>
         Powered by <a href="https://cataas.com" target="_blank">CATAAS API</a>
