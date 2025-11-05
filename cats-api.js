@@ -184,7 +184,7 @@ export class CatsApi extends LitElement {
 
   async loadData() {
     try {
-      const res = await fetch("./data.json");
+      const res = await fetch(new URL("./data.json", import.meta.url).href);
       const data = await res.json();
       this.allImages = data.images || [];
       this.loading = false;
