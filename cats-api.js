@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit";
 
+
 export class CatsApi extends LitElement {
   static get properties() {
     return {
@@ -8,7 +9,7 @@ export class CatsApi extends LitElement {
       page: { type: Number },
       perPage: { type: Number },
       loading: { type: Boolean },
-      theme: { type: String },
+      theme: { type: String, reflect: true },
       modalImage: { type: Object },
       modalOpen: { type: Boolean },
     };
@@ -19,14 +20,24 @@ export class CatsApi extends LitElement {
     this.images = [];
     this.allImages = [];
     this.page = 1;
-    this.perPage = 12;
+    this.perPage = 50; // load 50 images per batch
     this.loading = true;
     this.theme = window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
     this.modalImage = null;
     this.modalOpen = false;
-    this.observer = null;
+    this.paginationObserver = null;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    // ensure the document reflects the initial theme so page-level CSS can respond
+    try {
+      document.documentElement.setAttribute('data-theme', this.theme);
+    } catch (e) {
+      // ignore (e.g., server-side or restricted environments)
+    }
   }
 
   static get styles() {
@@ -40,31 +51,46 @@ export class CatsApi extends LitElement {
       }
 
       :host([theme="dark"]) {
-        --background: #0f172a;
-        --text: #f8fafc;
-        --card-bg: #27539a;
-      }
+      --background: #100101;  // tried using DDD, did not work (?)
+      --text: #ffffff;    
+      --card-bg: #0d2a6d; 
+    }
 
       :host([theme="light"]) {
-        --background: #f8fafc;
-        --text: #0f172a;
-        --card-bg: #5b9ee1;
-      }
+      --background: #ffffff; 
+      --text: #02040b;          
+      --card-bg: #a0ccf7;        
+    }
+
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
+      }
+
+      @media(max-width: 900px){
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media(max-width: 600px){
+        .grid {
+          grid-template-columns: 1fr;
+        }
       }
 
       .card {
         background-color: var(--card-bg);
-        border-radius: 0.75rem;
+        border-radius: 0.5rem;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         transition: transform 0.2s, box-shadow 0.2s;
+        opacity: 0;
+        animation: fadeIn 0.6s ease-in forwards;
       }
 
       .card:hover {
@@ -74,14 +100,14 @@ export class CatsApi extends LitElement {
 
       .card img {
         width: 100%;
-        height: 200px;
+        height: 250px;
         object-fit: cover;
         cursor: pointer;
         display: block;
       }
 
       .card-info {
-        padding: 0.5rem 1rem;
+        padding: 1rem 1rem;
       }
 
       .author {
@@ -89,11 +115,12 @@ export class CatsApi extends LitElement {
         align-items: center;
         gap: 0.5rem;
         margin-top: 0.5rem;
+        padding: 0.5rem 0.5rem
       }
 
       .author img {
-        width: 30px;
-        height: 30px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
       }
 
@@ -108,18 +135,30 @@ export class CatsApi extends LitElement {
         cursor: pointer;
         background: none;
         border: none;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
 
-      .load-more {
-        display: block;
-        margin: 2rem auto;
-        padding: 0.5rem 1rem;
-        font-weight: bold;
-        cursor: pointer;
+      .like-button.punch {
+        animation: punch 0.25s ease-in-out;
       }
 
-      /* Modal / Lightbox */
+      @keyframes punch {
+        0% { transform: scale(1); box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        50% { transform: scale(1.3); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+        100% { transform: scale(1); box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
       .modal {
         display: none;
         position: fixed;
@@ -166,14 +205,24 @@ export class CatsApi extends LitElement {
         color: var(--text);
       }
 
-      @media(max-width: 600px){
-        .grid {
-          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        }
+      .theme-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        background-color: var(--card-bg);
+        color: var(--text);
+        border: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        transition: transform 0.2s;
+        z-index: 100;
+      }
 
-        .card img {
-          height: 150px;
-        }
+      .theme-toggle:hover {
+        transform: scale(1.1);
       }
     `;
   }
@@ -186,7 +235,7 @@ export class CatsApi extends LitElement {
     try {
       const res = await fetch(new URL("./data.json", import.meta.url).href);
       const data = await res.json();
-      this.allImages = data.images || [];
+      this.allImages = (data.images || []).map(img => ({ ...img, liked: false }));
       this.loading = false;
       this.loadPage();
     } catch (err) {
@@ -201,33 +250,55 @@ export class CatsApi extends LitElement {
     this.images = [...this.images, ...this.allImages.slice(start, end)];
     this.page++;
     this.requestUpdate();
-    this.setupLazyLoad();
+    this.setupImageObserver();
+    this.setupPaginationObserver();
   }
 
-  setupLazyLoad() {
-    if (!this.observer) {
-      this.observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            if (img.dataset.src && img.src !== img.dataset.src) {
-              img.src = img.dataset.src;
-            }
-            this.observer.unobserve(img);
-          }
-        });
-      }, { rootMargin: "100px" });
-    }
-
-    this.shadowRoot.querySelectorAll('img[data-src]').forEach(img => {
-      // Ensure placeholder src is visible immediately
-      if (!img.src) img.src = img.dataset.src;
-      this.observer.observe(img);
+  setupImageObserver() {
+  const images = this.shadowRoot.querySelectorAll('img[data-src]');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        observer.unobserve(img);
+      }
     });
+  }, { rootMargin: "100px" });
+
+  images.forEach(img => observer.observe(img));
+}
+
+
+  setupPaginationObserver() {
+    const lastCard = this.shadowRoot.querySelector('.grid .card:last-child');
+    if (!lastCard) return;
+
+    if (this.paginationObserver) this.paginationObserver.disconnect();
+
+    this.paginationObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && this.page * this.perPage < this.allImages.length) {
+          this.loadPage();
+        }
+      });
+    }, { rootMargin: "200px" });
+
+    this.paginationObserver.observe(lastCard);
   }
 
-  openModal(image) {
-    this.modalImage = image;
+  toggleLike(image, event) {
+    image.liked = !image.liked;
+    this.requestUpdate();
+
+    const btn = event.currentTarget;
+    btn.classList.remove('punch');
+    void btn.offsetWidth; // force reflow
+    btn.classList.add('punch');
+  }
+
+  openModal(img) {
+    this.modalImage = img;
     this.modalOpen = true;
   }
 
@@ -236,41 +307,72 @@ export class CatsApi extends LitElement {
     this.modalImage = null;
   }
 
+  toggleTheme() {
+    this.theme = this.theme === 'dark' ? 'light' : 'dark';
+    // reflect global theme so outer page styles can update (body background, etc.)
+    try {
+      document.documentElement.setAttribute('data-theme', this.theme);
+    } catch (e) {
+      // ignore
+    }
+  }
+
+  shareImage(img) {
+  const url = img.full;
+  if (navigator.share) {
+    navigator.share({
+      title: img.name,
+      text: "Check out this cat!",
+      url
+    }).catch(() => {});
+  } 
+  else {
+    navigator.clipboard.writeText(url).then(() => {
+      alert("Link copied to clipboard:\n" + url);
+    });
+  }
+}
+
   render() {
     return html`
+      <button class="theme-toggle" @click="${this.toggleTheme}">
+        ${this.theme === 'dark' ? '☀️' : '🌙'}
+      </button>
       <div class="grid">
-        ${this.images.map(img => html`
-          <div class="card">
-            <img
-              data-src="${img.thumbnail}"
-              src="${img.thumbnail}" 
-              @click="${() => this.openModal(img)}"
-              alt="${img.name}" 
-            />
-            <div class="card-info">
-              <div><strong>${img.name}</strong> (${img.dateTaken})</div>
-              <div class="author">
-                <img src="${img.author.avatar}" />
-                <div>
-                  ${img.author.name} <br />
-                  ${img.author.channel} <br> (User since ${img.author.userSince})
-                </div>
+        ${this.images.map((img, index) => html`
+          <div class="card" id="cat-${img.id}" style="animation-delay: ${(index % this.perPage) * 0.05}s">
+            <div class="author">
+              <img src="${img.author.avatar}" />
+              <div>
+                <h4><b>${img.author.name}</b></h4>
+                ${img.author.channel}<br>(User since ${img.author.userSince})<br>
               </div>
             </div>
+
+            <img
+              src="${img.thumbnail}"
+              alt="${img.name}"
+              loading="lazy"
+              @click="${() => this.openModal(img)}"
+            />
+
+
             <div class="actions">
-              <button @click="${() => alert('Liked!')}">👍</button>
-              <button @click="${() => alert('Disliked!')}">👎</button>
-              <button @click="${() => alert('Loved!')}">❤️</button>
-              <button @click="${() => alert('Shared!')}">🔗</button>
+              <button class="like-button" @click="${(e) => this.toggleLike(img, e)}">
+                ${img.liked ? '❤️' : '🤍'}
+              </button>
+              <button @click="${() => alert('Comments!')}">💬</button>
+              <button @click="${() => alert('Share to story!')}">🔁</button>
+              <button @click="${() => this.shareImage(img)}">🔗</button>
+            </div>
+
+            <div class="card-info">
+              ${img.dateTaken}<br>
+              <strong>${img.name}</strong><br>
             </div>
           </div>
         `)}
       </div>
-
-      ${this.page * this.perPage < this.allImages.length
-        ? html`<button class="load-more" @click="${() => this.loadPage()}">Load More Cats</button>`
-        : null
-      }
 
       <div class="modal ${this.modalOpen ? 'open' : ''}" @click="${this.closeModal}">
         ${this.modalImage ? html`

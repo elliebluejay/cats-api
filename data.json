@@ -4,7 +4,7 @@
   "images": [
     {
       "id": 1,
-      "name": "Sleepy Cat",
+      "name": "Bumble",
       "dateTaken": "2025-10-01",
       "thumbnail": "https://cataas.com/cat?random=1",
       "full": "https://cataas.com/cat?random=1&full",
@@ -17,7 +17,7 @@
     },
     {
       "id": 2,
-      "name": "Curious Kitten",
+      "name": "Gadget",
       "dateTaken": "2025-10-02",
       "thumbnail": "https://cataas.com/cat?random=2",
       "full": "https://cataas.com/cat?random=2&full",
@@ -30,7 +30,7 @@
     },
     {
       "id": 3,
-      "name": "Playful Paws",
+      "name": "Clove",
       "dateTaken": "2025-10-03",
       "thumbnail": "https://cataas.com/cat?random=3",
       "full": "https://cataas.com/cat?random=3&full",
@@ -43,7 +43,7 @@
     },
     {
       "id": 4,
-      "name": "Grumpy Cat",
+      "name": "Mochi",
       "dateTaken": "2025-10-04",
       "thumbnail": "https://cataas.com/cat?random=4",
       "full": "https://cataas.com/cat?random=4&full",
@@ -56,7 +56,7 @@
     },
     {
       "id": 5,
-      "name": "Tiny Tiger",
+      "name": "Noodles",
       "dateTaken": "2025-10-05",
       "thumbnail": "https://cataas.com/cat?random=5",
       "full": "https://cataas.com/cat?random=5&full",
@@ -69,7 +69,7 @@
     },
     {
       "id": 6,
-      "name": "Majestic Maine Coon",
+      "name": "Orbit",
       "dateTaken": "2025-10-06",
       "thumbnail": "https://cataas.com/cat?random=6",
       "full": "https://cataas.com/cat?random=6&full",
@@ -82,7 +82,7 @@
     },
     {
       "id": 7,
-      "name": "Snoozy Kitty",
+      "name": "Pebble",
       "dateTaken": "2025-10-07",
       "thumbnail": "https://cataas.com/cat?random=7",
       "full": "https://cataas.com/cat?random=7&full",
@@ -95,7 +95,7 @@
     },
     {
       "id": 8,
-      "name": "Adventurous Cat",
+      "name": "Taco",
       "dateTaken": "2025-10-08",
       "thumbnail": "https://cataas.com/cat?random=8",
       "full": "https://cataas.com/cat?random=8&full",
@@ -108,7 +108,7 @@
     },
     {
       "id": 9,
-      "name": "Fluffy Friend",
+      "name": "Sneaky",
       "dateTaken": "2025-10-09",
       "thumbnail": "https://cataas.com/cat?random=9",
       "full": "https://cataas.com/cat?random=9&full",
@@ -121,7 +121,7 @@
     },
     {
       "id": 10,
-      "name": "Whisker Wonder",
+      "name": "Ollie",
       "dateTaken": "2025-10-10",
       "thumbnail": "https://cataas.com/cat?random=10",
       "full": "https://cataas.com/cat?random=10&full",
@@ -134,7 +134,7 @@
     },
     {
       "id": 11,
-      "name": "Tiny Purr",
+      "name": "Doodle",
       "dateTaken": "2025-10-11",
       "thumbnail": "https://cataas.com/cat?random=11",
       "full": "https://cataas.com/cat?random=11&full",
@@ -147,7 +147,7 @@
     },
     {
       "id": 12,
-      "name": "Mysterious Cat",
+      "name": "Oreo",
       "dateTaken": "2025-10-12",
       "thumbnail": "https://cataas.com/cat?random=12",
       "full": "https://cataas.com/cat?random=12&full",
@@ -160,7 +160,7 @@
     },
     {
       "id": 13,
-      "name": "Playful Whiskers",
+      "name": "Marble",
       "dateTaken": "2025-10-13",
       "thumbnail": "https://cataas.com/cat?random=13",
       "full": "https://cataas.com/cat?random=13&full",
@@ -173,7 +173,7 @@
     },
     {
       "id": 14,
-      "name": "Cuddly Cat",
+      "name": "Leo",
       "dateTaken": "2025-10-14",
       "thumbnail": "https://cataas.com/cat?random=14",
       "full": "https://cataas.com/cat?random=14&full",
@@ -186,7 +186,7 @@
     },
     {
       "id": 15,
-      "name": "Sleepy Paws",
+      "name": "Buttercup",
       "dateTaken": "2025-10-15",
       "thumbnail": "https://cataas.com/cat?random=15",
       "full": "https://cataas.com/cat?random=15&full",
@@ -199,7 +199,7 @@
     },
     {
       "id": 16,
-      "name": "Lazy Lion",
+      "name": "Max",
       "dateTaken": "2025-10-16",
       "thumbnail": "https://cataas.com/cat?random=16",
       "full": "https://cataas.com/cat?random=16&full",
@@ -212,7 +212,7 @@
     },
     {
       "id": 17,
-      "name": "Curious Whiskers",
+      "name": "Bella",
       "dateTaken": "2025-10-17",
       "thumbnail": "https://cataas.com/cat?random=17",
       "full": "https://cataas.com/cat?random=17&full",
@@ -225,7 +225,7 @@
     },
     {
       "id": 18,
-      "name": "Mysterious Kitty",
+      "name": "Nala",
       "dateTaken": "2025-10-18",
       "thumbnail": "https://cataas.com/cat?random=18",
       "full": "https://cataas.com/cat?random=18&full",
@@ -238,7 +238,7 @@
     },
     {
       "id": 19,
-      "name": "Playful Tiger",
+      "name": "S'more",
       "dateTaken": "2025-10-19",
       "thumbnail": "https://cataas.com/cat?random=19",
       "full": "https://cataas.com/cat?random=19&full",
@@ -251,7 +251,7 @@
     },
     {
       "id": 20,
-      "name": "Snoozy Tabby",
+      "name": "Biscuit",
       "dateTaken": "2025-10-20",
       "thumbnail": "https://cataas.com/cat?random=20",
       "full": "https://cataas.com/cat?random=20&full",
@@ -264,7 +264,7 @@
     },
     {
       "id": 21,
-      "name": "Golden Paws",
+      "name": "Mochi",
       "dateTaken": "2025-10-21",
       "thumbnail": "https://cataas.com/cat?random=21",
       "full": "https://cataas.com/cat?random=21&full",
@@ -277,7 +277,7 @@
     },
     {
       "id": 22,
-      "name": "Furry Friend",
+      "name": "Pudding",
       "dateTaken": "2025-10-22",
       "thumbnail": "https://cataas.com/cat?random=22",
       "full": "https://cataas.com/cat?random=22&full",
@@ -290,7 +290,7 @@
     },
     {
       "id": 23,
-      "name": "Purring Kitty",
+      "name": "Cookie",
       "dateTaken": "2025-10-23",
       "thumbnail": "https://cataas.com/cat?random=23",
       "full": "https://cataas.com/cat?random=23&full",
@@ -303,7 +303,7 @@
     },
     {
       "id": 24,
-      "name": "Shadow Cat",
+      "name": "Mufasa",
       "dateTaken": "2025-10-24",
       "thumbnail": "https://cataas.com/cat?random=24",
       "full": "https://cataas.com/cat?random=24&full",
@@ -316,7 +316,7 @@
     },
     {
       "id": 25,
-      "name": "Sleepy Whiskers",
+      "name": "Ginger",
       "dateTaken": "2025-10-25",
       "thumbnail": "https://cataas.com/cat?random=25",
       "full": "https://cataas.com/cat?random=25&full",
@@ -329,7 +329,7 @@
     },
     {
       "id": 26,
-      "name": "Tiny Tiger Cub",
+      "name": "Maple",
       "dateTaken": "2025-10-26",
       "thumbnail": "https://cataas.com/cat?random=26",
       "full": "https://cataas.com/cat?random=26&full",
@@ -342,7 +342,7 @@
     },
     {
       "id": 27,
-      "name": "Fluffy Snuggles",
+      "name": "Squishes",
       "dateTaken": "2025-10-27",
       "thumbnail": "https://cataas.com/cat?random=27",
       "full": "https://cataas.com/cat?random=27&full",
@@ -355,7 +355,7 @@
     },
     {
       "id": 28,
-      "name": "Golden Kitty",
+      "name": "Cloud",
       "dateTaken": "2025-10-28",
       "thumbnail": "https://cataas.com/cat?random=28",
       "full": "https://cataas.com/cat?random=28&full",
@@ -368,7 +368,7 @@
     },
     {
       "id": 29,
-      "name": "Purrfect Friend",
+      "name": "Mittens",
       "dateTaken": "2025-10-29",
       "thumbnail": "https://cataas.com/cat?random=29",
       "full": "https://cataas.com/cat?random=29&full",
@@ -381,7 +381,7 @@
     },
     {
       "id": 30,
-      "name": "Nap Time Cat",
+      "name": "Lightning",
       "dateTaken": "2025-10-30",
       "thumbnail": "https://cataas.com/cat?random=30",
       "full": "https://cataas.com/cat?random=30&full",
@@ -391,7 +391,267 @@
         "userSince": "2018",
         "channel": "@dylan_cats"
       }
+    },
+    {
+      "id": 31,
+      "name": "Fluffer",
+      "dateTaken": "2025-10-31",
+      "thumbnail": "https://cataas.com/cat?random=31",
+      "full": "https://cataas.com/cat?random=31&full",
+      "author": {
+        "name": "Jamie",
+        "avatar": "https://randomuser.me/api/portraits/men/31.jpg",
+        "userSince": "2017",
+        "channel": "@jamie_cats"
+      }
+    },
+    {
+      "id": 32,
+      "name": "Cookie",
+      "dateTaken": "2025-11-01",
+      "thumbnail": "https://cataas.com/cat?random=32",
+      "full": "https://cataas.com/cat?random=32&full",
+      "author": {
+        "name": "Nicholas",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+        "userSince": "2014",
+        "channel": "@nicholas_cats"
+      }
+    },
+    {
+      "id": 33,
+      "name": "Fluffy",
+      "dateTaken": "2025-11-02",
+      "thumbnail": "https://cataas.com/cat?random=33",
+      "full": "https://cataas.com/cat?random=33&full",
+      "author": {
+        "name": "Jessica",
+        "avatar": "https://randomuser.me/api/portraits/women/33.jpg",
+        "userSince": "2017",
+        "channel": "@jessica_cats"
+      }
+    },
+    {
+      "id": 34,
+      "name": "Mischief",
+      "dateTaken": "2025-11-03",
+      "thumbnail": "https://cataas.com/cat?random=34",
+      "full": "https://cataas.com/cat?random=34&full",
+      "author": {
+        "name": "Suzie",
+        "avatar": "https://randomuser.me/api/portraits/women/34.jpg",
+        "userSince": "2018",
+        "channel": "@suzie_cats"
+      }
+    },
+  {
+    "id": 35,
+    "name": "Whiskers",
+    "dateTaken": "2025-11-01",
+    "thumbnail": "https://cataas.com/cat?random=35",
+    "full": "https://cataas.com/cat?random=35&full",
+    "author": {
+      "name": "Jameson",
+      "avatar": "https://randomuser.me/api/portraits/women/35.jpg",
+      "userSince": "2019",
+      "channel": "@jameson_cats"
     }
-  ]
+  },
+  {
+    "id": 36,
+    "name": "Sleepy",
+    "dateTaken": "2025-11-02",
+    "thumbnail": "https://cataas.com/cat?random=36",
+    "full": "https://cataas.com/cat?random=36&full",
+    "author": {
+      "name": "Liam",
+      "avatar": "https://randomuser.me/api/portraits/men/36.jpg",
+      "userSince": "2020",
+      "channel": "@liam_cats"
+    }
+  },
+  {
+    "id": 37,
+    "name": "Little Thief",
+    "dateTaken": "2025-11-03",
+    "thumbnail": "https://cataas.com/cat?random=37",
+    "full": "https://cataas.com/cat?random=37&full",
+    "author": {
+      "name": "Emma",
+      "avatar": "https://randomuser.me/api/portraits/women/37.jpg",
+      "userSince": "2018",
+      "channel": "@emma_cats"
+    }
+  },
+  {
+    "id": 38,
+    "name": "Tiny",
+    "dateTaken": "2025-11-04",
+    "thumbnail": "https://cataas.com/cat?random=38",
+    "full": "https://cataas.com/cat?random=38&full",
+    "author": {
+      "name": "Noah",
+      "avatar": "https://randomuser.me/api/portraits/men/38.jpg",
+      "userSince": "2016",
+      "channel": "@noah_cats"
+    }
+  },
+  {
+    "id": 39,
+    "name": "George",
+    "dateTaken": "2025-11-05",
+    "thumbnail": "https://cataas.com/cat?random=39",
+    "full": "https://cataas.com/cat?random=39&full",
+    "author": {
+      "name": "Ava",
+      "avatar": "https://randomuser.me/api/portraits/women/39.jpg",
+      "userSince": "2021",
+      "channel": "@ava_cats"
+    }
+  },
+  {
+    "id": 40,
+    "name": "Shadows",
+    "dateTaken": "2025-11-06",
+    "thumbnail": "https://cataas.com/cat?random=40",
+    "full": "https://cataas.com/cat?random=40&full",
+    "author": {
+      "name": "Ethan",
+      "avatar": "https://randomuser.me/api/portraits/men/40.jpg",
+      "userSince": "2015",
+      "channel": "@ethan_cats"
+    }
+  },
+  {
+    "id": 41,
+    "name": "Midnight",
+    "dateTaken": "2025-11-07",
+    "thumbnail": "https://cataas.com/cat?random=41",
+    "full": "https://cataas.com/cat?random=41&full",
+    "author": {
+      "name": "Sophia",
+      "avatar": "https://randomuser.me/api/portraits/women/41.jpg",
+      "userSince": "2017",
+      "channel": "@sophia_cats"
+    }
+  },
+  {
+    "id": 42,
+    "name": "Ginger Snap",
+    "dateTaken": "2025-11-08",
+    "thumbnail": "https://cataas.com/cat?random=42",
+    "full": "https://cataas.com/cat?random=42&full",
+    "author": {
+      "name": "Lucas",
+      "avatar": "https://randomuser.me/api/portraits/men/42.jpg",
+      "userSince": "2018",
+      "channel": "@lucas_cats"
+    }
+  },
+  {
+    "id": 43,
+    "name": "Biscuits",
+    "dateTaken": "2025-11-09",
+    "thumbnail": "https://cataas.com/cat?random=43",
+    "full": "https://cataas.com/cat?random=43&full",
+    "author": {
+      "name": "Isabella",
+      "avatar": "https://randomuser.me/api/portraits/women/43.jpg",
+      "userSince": "2019",
+      "channel": "@isabella_cats"
+    }
+  },
+  {
+    "id": 44,
+    "name": "Sneezy",
+    "dateTaken": "2025-11-10",
+    "thumbnail": "https://cataas.com/cat?random=44",
+    "full": "https://cataas.com/cat?random=44&full",
+    "author": {
+      "name": "Mason",
+      "avatar": "https://randomuser.me/api/portraits/men/44.jpg",
+      "userSince": "2016",
+      "channel": "@mason_cats"
+    }
+  },
+  {
+    "id": 45,
+    "name": "Cuddle Monster",
+    "dateTaken": "2025-11-11",
+    "thumbnail": "https://cataas.com/cat?random=45",
+    "full": "https://cataas.com/cat?random=45&full",
+    "author": {
+      "name": "Mia",
+      "avatar": "https://randomuser.me/api/portraits/women/45.jpg",
+      "userSince": "2020",
+      "channel": "@mia_cats"
+    }
+  },
+  {
+    "id": 46,
+    "name": "Lazy",
+    "dateTaken": "2025-11-12",
+    "thumbnail": "https://cataas.com/cat?random=46",
+    "full": "https://cataas.com/cat?random=46&full",
+    "author": {
+      "name": "James",
+      "avatar": "https://randomuser.me/api/portraits/men/46.jpg",
+      "userSince": "2015",
+      "channel": "@james_cats"
+    }
+  },
+  {
+    "id": 47,
+    "name": "Snuggle Bug",
+    "dateTaken": "2025-11-13",
+    "thumbnail": "https://cataas.com/cat?random=47",
+    "full": "https://cataas.com/cat?random=47&full",
+    "author": {
+      "name": "Charlotte",
+      "avatar": "https://randomuser.me/api/portraits/women/47.jpg",
+      "userSince": "2018",
+      "channel": "@charlotte_cats"
+    }
+  },
+  {
+    "id": 48,
+    "name": "Muffin",
+    "dateTaken": "2025-11-14",
+    "thumbnail": "https://cataas.com/cat?random=48",
+    "full": "https://cataas.com/cat?random=48&full",
+    "author": {
+      "name": "Benjamin",
+      "avatar": "https://randomuser.me/api/portraits/men/48.jpg",
+      "userSince": "2017",
+      "channel": "@benjamin_cats"
+    }
+  },
+  {
+    "id": 49,
+    "name": "Whiskers",
+    "dateTaken": "2025-11-15",
+    "thumbnail": "https://cataas.com/cat?random=49",
+    "full": "https://cataas.com/cat?random=49&full",
+    "author": {
+      "name": "Amelia",
+      "avatar": "https://randomuser.me/api/portraits/women/49.jpg",
+      "userSince": "2019",
+      "channel": "@amelia_cats"
+    }
+  },
+  {
+    "id": 50,
+    "name": "Ninja",
+    "dateTaken": "2025-11-16",
+    "thumbnail": "https://cataas.com/cat?random=50",
+    "full": "https://cataas.com/cat?random=50&full",
+    "author": {
+      "name": "Henry",
+      "avatar": "https://randomuser.me/api/portraits/men/50.jpg",
+      "userSince": "2020",
+      "channel": "@henry_cats"
+    }
+  }
+]
 }
 
