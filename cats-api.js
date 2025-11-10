@@ -20,7 +20,7 @@ export class CatsApi extends LitElement {
     this.images = [];
     this.allImages = [];
     this.page = 1;
-    this.perPage = 50; // load 50 images per batch
+    this.perPage = 50;
     this.loading = true;
     this.theme = window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
@@ -32,11 +32,9 @@ export class CatsApi extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    // ensure the document reflects the initial theme so page-level CSS can respond
     try {
       document.documentElement.setAttribute('data-theme', this.theme);
     } catch (e) {
-      // ignore (e.g., server-side or restricted environments)
     }
   }
 
@@ -51,7 +49,7 @@ export class CatsApi extends LitElement {
       }
 
       :host([theme="dark"]) {
-      --background: #100101;  // tried using DDD, did not work (?)
+      --background: #100101;  // tried using DDD, did not work (?) no idea why, it has for me before?
       --text: #ffffff;    
       --card-bg: #0d2a6d; 
     }
@@ -65,7 +63,7 @@ export class CatsApi extends LitElement {
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); // switched from 5 columns to 3
         gap: 1rem;
       }
 
@@ -77,7 +75,7 @@ export class CatsApi extends LitElement {
 
       @media(max-width: 600px){
         .grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr; // 1 column for mobile
         }
       }
 
@@ -309,11 +307,9 @@ export class CatsApi extends LitElement {
 
   toggleTheme() {
     this.theme = this.theme === 'dark' ? 'light' : 'dark';
-    // reflect global theme so outer page styles can update (body background, etc.)
     try {
       document.documentElement.setAttribute('data-theme', this.theme);
     } catch (e) {
-      // ignore
     }
   }
 
@@ -322,7 +318,7 @@ export class CatsApi extends LitElement {
   if (navigator.share) {
     navigator.share({
       title: img.name,
-      text: "Check out this cat!",
+      text: "Cute cat image :)",
       url
     }).catch(() => {});
   } 
