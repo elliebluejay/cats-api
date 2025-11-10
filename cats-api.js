@@ -49,7 +49,7 @@ export class CatsApi extends LitElement {
       }
 
       :host([theme="dark"]) {
-      --background: #100101;  // tried using DDD, did not work (?) no idea why, it has for me before?
+      --background: #100101;   /* tried using DDD, did not work (?) no idea why, it has for me before? */
       --text: #ffffff;    
       --card-bg: #0d2a6d; 
     }
@@ -63,7 +63,7 @@ export class CatsApi extends LitElement {
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); // switched from 5 columns to 3
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
       }
 
@@ -75,7 +75,7 @@ export class CatsApi extends LitElement {
 
       @media(max-width: 600px){
         .grid {
-          grid-template-columns: 1fr; // 1 column for mobile
+          grid-template-columns: 1fr; 
         }
       }
 
@@ -291,7 +291,7 @@ export class CatsApi extends LitElement {
 
     const btn = event.currentTarget;
     btn.classList.remove('punch');
-    void btn.offsetWidth; // force reflow
+    void btn.offsetWidth; 
     btn.classList.add('punch');
   }
 
